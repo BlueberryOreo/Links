@@ -162,7 +162,7 @@ BigInteger BigInteger::operator+(const BigInteger& b) const
 		else {
 			BigInteger ret = *this;
 			ret.l_sign *= -1;
-			ret = ret - *this;
+			ret = b - ret;
 			return ret;
 		}
 	}
@@ -271,8 +271,14 @@ BigInteger abs(const BigInteger& b)
 
 ostream& operator<<(ostream& out, const BigInteger& b)
 {
+	int i = b.size() - 1;
+	while (i >= 0 && b.num[i] == 0) i--;
+	if (i < 0) {
+		out << "0";
+		return out;
+	}
 	if (b.sign() < 0) out << '-';
-	for (int i = b.size() - 1; i >= 0; i --) {
+	for (; i >= 0; i --) {
 		out << b.num[i];
 	}
 	return out;

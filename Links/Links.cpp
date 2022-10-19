@@ -25,6 +25,7 @@ void testLink() {
 	}
 	Link l(num, n);
 	delete[] num;
+	system("cls");
 	
 	while (true) {
 		println();
@@ -48,11 +49,15 @@ void testLink() {
 			cout << "请输入要插入的数据：";;
 			cin >> entry;
 			errorProcess(l.insert(idx, entry));
+			cout << "操作后链表：" << endl;
+			l.print();
 			break;
 		case 2:
 			cout << "请输入要删除的下标（从0开始）：";
 			cin >> idx;
 			errorProcess(l.remove(idx));
+			cout << "操作后链表：" << endl;
+			l.print();
 			break;
 		case 3:
 			cout << "请输入要修改的下标（从0开始）:";
@@ -60,6 +65,8 @@ void testLink() {
 			cout << "请输入修改后的数据：";
 			cin >> entry;
 			errorProcess(l.set(idx, entry));
+			cout << "操作后链表：" << endl;
+			l.print();
 			break;
 		case 4:
 			cout << "请输入要查询的数据：";
@@ -74,6 +81,8 @@ void testLink() {
 			cout << "输入有误" << endl;
 			break;
 		}
+		system("pause");
+		system("cls");
 	}
 }
 
@@ -92,12 +101,14 @@ int instructor() {
 		cout << "非法输入，请重新输入：";
 		cin >> op;
 	}
+	system("cls");
 	return op;
 }
 
 int main() {
 	
 	//=========================================//
+
 	int op = instructor();
 	switch (op)
 	{
