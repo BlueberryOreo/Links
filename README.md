@@ -18,7 +18,6 @@
   * `utility.h`
   * `Links.vcsproj`
   * `Links.vcxproj.filters`
-  * `Links.vscproj.user`
 
 ## 运行方法
 
