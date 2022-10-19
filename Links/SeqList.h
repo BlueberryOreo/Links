@@ -1,24 +1,25 @@
 #pragma once
 #include "utility.h"
 
+// 顺序表
 template<typename T>
 class SeqList {
 protected:
-	T* list;
-	int head;
-	int memory;
-	int size;
-	int getIdx(T *pos);
+	T* list; // 顺序表数组
+	int head; // 头指针
+	int memory; // 顺序表所占内存
+	int size; // 顺序表大小
+	int getIdx(T *pos); // 通过指针获取下标
 public:
 	SeqList();
 	SeqList(T *arr, int n);
 	~SeqList();
-	int insert(int idx, T entry);
-	int remove(int idx);
-	int set(int idx, T entry);
-	int get(int idx, T &res);
-	T* search(T entry);
-	void print();
+	int insert(int idx, T entry); // 增
+	int remove(int idx); // 删
+	int set(int idx, T entry); // 改
+	int get(int idx, T &res); // 取
+	T* search(T entry); // 查
+	void print(); // 打印
 };
 
 template<typename T>

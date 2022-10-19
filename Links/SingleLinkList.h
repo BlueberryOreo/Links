@@ -2,24 +2,25 @@
 #include "utility.h"
 #include "SingleNode.h"
 
+// 单向链表
 template<typename T>
 class SingleLinkList {
 protected:
-	sNode<T>* head;
-	int l_size;
-	sNode<T>* getPos(int idx);
+	sNode<T>* head; // 头节点
+	int l_size; // 大小
+	sNode<T>* getPos(int idx); // 根据下标获取指针
 public:
 	typedef sNode<T>* node; // 指针
 	SingleLinkList();
 	SingleLinkList(T *arr, int n);
 	~SingleLinkList();
-	int insert(int idx, T entry);
-	int remove(int idx);
-	int set(int idx, T entry);
-	int get(int idx, T &res);
-	sNode<T>* search(T entry);
-	int size();
-	void print();
+	int insert(int idx, T entry); // 增
+	int remove(int idx); // 删
+	int set(int idx, T entry); // 改
+	int get(int idx, T &res); // 取
+	sNode<T>* search(T entry); // 查
+	int size(); // 获得大小
+	void print(); // 打印
 };
 
 template<typename T>

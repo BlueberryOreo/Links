@@ -2,25 +2,26 @@
 #include "utility.h"
 #include "DoubleNode.h"
 
+// 双向链表
 template<typename T>
 class DoubleLinkList {
 protected:
-	dNode<T>* head;
-	dNode<T>* now;
-	int l_size;
-	void getPos(int idx);
+	dNode<T>* head; // 头节点
+	dNode<T>* now; // 当前指针
+	int l_size; // 大小
+	void getPos(int idx); // 通过下标调整当前指针位置
 public:
 	typedef dNode<T>* node;
 	DoubleLinkList();
 	DoubleLinkList(T *arr, int n);
 	~DoubleLinkList();
-	int insert(int idx, T entry);
-	int remove(int idx);
-	int set(int idx, T entry);
-	int get(int idx, T &res);
-	dNode<T>* search(T entry);
-	int size();
-	void print();
+	int insert(int idx, T entry); // 增
+	int remove(int idx); // 删
+	int set(int idx, T entry); // 改
+	int get(int idx, T &res); // 获取
+	dNode<T>* search(T entry); // 查
+	int size(); // 获取大小
+	void print(); // 打印
 };
 
 template<typename T>

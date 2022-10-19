@@ -1,14 +1,15 @@
 #pragma once
 #include "DoubleLinkList.h"
 
+// 循环双链表
 template<typename T>
 class CirDoubleLinkList : public DoubleLinkList<T> {
 public:
 	CirDoubleLinkList();
 	CirDoubleLinkList(T *arr, int n);
 	~CirDoubleLinkList();
-	dNode<T>* search(T entry);
-	void print();
+	dNode<T>* search(T entry); // 重写查找方法
+	void print(); // 重写打印方法
 };
 
 template<typename T>

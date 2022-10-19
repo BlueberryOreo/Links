@@ -2,14 +2,15 @@
 #include "utility.h"
 #include "SingleLinkList.h"
 
+// 循环单链表
 template<typename T>
 class CirSingleLinkList: public SingleLinkList<T> {
 public:
 	CirSingleLinkList();
 	CirSingleLinkList(T* arr, int n);
 	~CirSingleLinkList();
-	sNode<T>* search(T entry);
-	void print();
+	sNode<T>* search(T entry); // 重写查找方法
+	void print(); // 重写打印方法
 };
 
 template<typename T>
